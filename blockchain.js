@@ -80,12 +80,12 @@ class Blockchain{
         return new Block("27/12/2019","Genesis block","0");
     }
 
-    getLastestBlock(){
+    getLatestBlock(){
         return this.chain[this.chain.length - 1];
     }
 
     minePendingTransactions(miningRewardAddress){
-        let block = new Block(Date.now(), this.pendingTransactions);
+        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
         block.mineBlock(this.difficulty);
 
         console.log("Block successfully mined!");
@@ -128,7 +128,8 @@ class Blockchain{
     }
 
     addBlock(newBlock){
-        newBlock.previousHash = this.getLastestBlock().hash;
+        newBlock.previousHash = this.getLatestBlock().hash;
+        console.log(this.getLatestBlock().hash);
         newBlock.mineBlock(this.difficulty);
         this.chain.push(newBlock);
     }
