@@ -1,0 +1,19 @@
+{
+  "name": "graves",
+  "version": "0.1.0",
+  "description": "Graves is the next generation of cryptocurrencies",
+  "main": "main.js",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "elliptic": "^6.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graves"
+  ],
+  "author": "justinx59",
+  "license": "ISC"
+}
